@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BinaryHeap.cs" />
+    <Compile Include="Classes\PriorityQueue.cs" />
+    <Compile Include="Other\PriorityQueueTest.cs" />
     <Compile Include="Tests\BinaryHeapTest.cs" />
     <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Program.cs" />
