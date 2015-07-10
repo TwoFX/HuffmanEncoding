@@ -27,6 +27,9 @@ namespace HuffmanEncoding
 
         public PriorityQueue(IEnumerable<Tuple<T, int>> source)
         {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
             underlying = new BinaryHeap<Tuple<T, int>>(source, new PriorityComparer<T>());
         }
 

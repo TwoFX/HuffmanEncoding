@@ -55,5 +55,12 @@ namespace HuffmanEncoding
             PriorityQueue<string> a = new PriorityQueue<string>();
             a.Pop();
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void PriorityQueueSourceNull()
+        {
+            PriorityQueue<string> a = new PriorityQueue<string>(null);
+        }
     }
 }

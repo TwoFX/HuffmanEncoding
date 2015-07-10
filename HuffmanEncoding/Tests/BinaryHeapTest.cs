@@ -50,5 +50,12 @@ namespace HuffmanEncoding
             Assert.AreEqual(5, h.Pop());
             h.Pop();
         }
+        
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void BinaryHeapSourceNull()
+        {
+            BinaryHeap<int> h = new BinaryHeap<int>(null, null);
+        }
     }
 }
