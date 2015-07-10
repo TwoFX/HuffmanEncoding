@@ -47,9 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryHeap.cs" />
-    <Compile Include="BinaryHeapTest.cs" />
-    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Classes\BinaryHeap.cs" />
+    <Compile Include="Tests\BinaryHeapTest.cs" />
+    <Compile Include="Other\ExtensionMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
