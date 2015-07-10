@@ -78,9 +78,7 @@ namespace HuffmanEncoding
 
             int largestIndex = new[] { index, 2 * index + 1, 2 * index + 2 }
                 .Where(ind => ind < underlying.Count)
-                .Select(ind => new { Index = ind, Value = underlying[ind] })
-                .MinBy(lx => lx.Value, this.comp)
-                .Index;
+                .MinBy(ind => underlying[ind], this.comp);
 
             if (largestIndex != index)
             {
