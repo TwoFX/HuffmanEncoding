@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HuffmanEncoding
 {
-    abstract class HuffmanTree<TSymbol>
+    public abstract class HuffmanTree<TSymbol>
     {
         public abstract int Frequency
         {
@@ -14,7 +14,7 @@ namespace HuffmanEncoding
         }
     }
 
-    class HuffmanTreeInternalNode<TSymbol> : HuffmanTree<TSymbol>
+    public class HuffmanTreeInternalNode<TSymbol> : HuffmanTree<TSymbol>
     {
         private HuffmanTree<TSymbol> left, right;
 
@@ -36,7 +36,7 @@ namespace HuffmanEncoding
         }
     }
 
-    class HuffmanTreeLeaf<TSymbol> : HuffmanTree<TSymbol>
+    public class HuffmanTreeLeaf<TSymbol> : HuffmanTree<TSymbol>
     {
         private TSymbol symbol;
         private int frequency;

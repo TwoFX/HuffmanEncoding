@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HuffmanEncoding
 {
-    class PriorityQueue<T>
+    public class PriorityQueue<T>
     {
         private class PriorityComparer<TPayload> : IComparer<Tuple<TPayload, int>>
         {

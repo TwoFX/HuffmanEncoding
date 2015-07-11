@@ -8,7 +8,7 @@ using MoreLinq;
 
 namespace HuffmanEncoding
 {
-    class BinaryHeap<T> : IEnumerable<T>
+    public class BinaryHeap<T> : IEnumerable<T>
     {
         private List<T> underlying;
         private IComparer<T> comp;

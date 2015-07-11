@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuffmanEncoding", "HuffmanEncoding\HuffmanEncoding.csproj", "{E6DA8239-BF06-4681-8E0C-BB3D5373A529}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuffmanEncodingTests", "HuffmanEncodingTests\HuffmanEncodingTests.csproj", "{B4A2A628-13AB-43D7-9C30-329AF9AE709E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E6DA8239-BF06-4681-8E0C-BB3D5373A529}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6DA8239-BF06-4681-8E0C-BB3D5373A529}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6DA8239-BF06-4681-8E0C-BB3D5373A529}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A2A628-13AB-43D7-9C30-329AF9AE709E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A2A628-13AB-43D7-9C30-329AF9AE709E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A2A628-13AB-43D7-9C30-329AF9AE709E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A2A628-13AB-43D7-9C30-329AF9AE709E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
