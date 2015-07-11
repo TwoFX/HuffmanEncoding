@@ -29,6 +29,11 @@ namespace HuffmanEncoding
             this.fullBalance();
         }
 
+        public int Size
+        {
+            get { return underlying.Count; }
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();

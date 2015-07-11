@@ -62,5 +62,27 @@ namespace HuffmanEncoding
         {
             PriorityQueue<string> a = new PriorityQueue<string>(null);
         }
+
+        [Test]
+        public void PriorityQueueSize()
+        {
+            PriorityQueue<int> p = new PriorityQueue<int>();
+            Assert.AreEqual(0, p.Size);
+
+            p.Push(5, 4);
+            Assert.AreEqual(1, p.Size);
+
+            p.Pop();
+            Assert.AreEqual(0, p.Size);
+
+            p = new PriorityQueue<int>(new[] { Tuple.Create(1, 1), Tuple.Create(1, 7) });
+            Assert.AreEqual(2, p.Size);
+
+            p.Push(9, 12);
+            Assert.AreEqual(3, p.Size);
+
+            p.Pop();
+            Assert.AreEqual(2, p.Size);
+        }
     }
 }

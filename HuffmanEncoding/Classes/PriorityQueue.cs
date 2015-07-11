@@ -33,6 +33,11 @@ namespace HuffmanEncoding
             underlying = new BinaryHeap<Tuple<T, int>>(source, new PriorityComparer<T>());
         }
 
+        public int Size
+        {
+            get { return underlying.Size; }
+        }
+
         public void Push(T value, int priority)
         {
             underlying.Push(new Tuple<T, int>(value, priority));

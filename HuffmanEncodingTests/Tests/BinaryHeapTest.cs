@@ -57,5 +57,32 @@ namespace HuffmanEncoding
         {
             BinaryHeap<int> h = new BinaryHeap<int>(null, null);
         }
+
+        [Test]
+        public void BinaryHeapSize()
+        {
+            BinaryHeap<int> h = new BinaryHeap<int>();
+            Assert.AreEqual(0, h.Size);
+
+            h.Push(7);
+            h.Push(29);
+            Assert.AreEqual(2, h.Size);
+
+            h.Pop();
+            Assert.AreEqual(1, h.Size);
+
+            h.Pop();
+            Assert.AreEqual(0, h.Size);
+
+            h = new BinaryHeap<int>(new[] { 1, 2, 3 });
+            Assert.AreEqual(3, h.Size);
+
+            h.Pop();
+            Assert.AreEqual(2, h.Size);
+
+            h.Push(12);
+            h.Push(21);
+            Assert.AreEqual(4, h.Size);
+        }
     }
 }

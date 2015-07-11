@@ -75,5 +75,20 @@ namespace HuffmanEncoding
             HuffmanTreeLeaf<int> a = new HuffmanTreeLeaf<int>(5, 9);
             HuffmanTreeInternalNode<int> i1 = new HuffmanTreeInternalNode<int>(a, null);
         }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void HuffmanTreeCreateSourceNull()
+        {
+            HuffmanTree<int> a = HuffmanTree<int>.Create(null);
+        }
+
+        [Test]
+        public void HuffmanTreeCreate1()
+        {
+            HuffmanTree<char> a = HuffmanTree<char>.Create("this is an example of a huffman tree");
+            Assert.AreEqual(36, a.Frequency);
+        }
+    
     }
 }

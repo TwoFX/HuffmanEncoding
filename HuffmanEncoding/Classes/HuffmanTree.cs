@@ -12,6 +12,39 @@ namespace HuffmanEncoding
         {
             get;
         }
+
+        public static HuffmanTree<TSymbol> Create(IEnumerable<TSymbol> source, IEqualityComparer<TSymbol> comparer = null)
+        {
+            if (source == null)
+                throw new ArgumentNullException("source");
+
+            IEqualityComparer<TSymbol> comp = comparer ?? EqualityComparer<TSymbol>.Default;
+
+            Dictionary<TSymbol, int> freq = new Dictionary<TSymbol, int>(comp);
+
+            foreach (TSymbol item in source)
+            {
+                int f = 1;
+                if (freq.ContainsKey(item))
+                    f = freq[item] + 1;
+                freq[item] = f; 
+            }
+
+            PriorityQueue<HuffmanTree<TSymbol>> pq = new PriorityQueue<HuffmanTree<TSymbol>>(
+                freq.Select(kvp => Tuple.Create((HuffmanTree<TSymbol>)new HuffmanTreeLeaf<TSymbol>(kvp.Key, kvp.Value), kvp.Value)));
+
+            while (pq.Size >= 2)
+            {
+                var a = pq.Pop();
+                var b = pq.Pop();
+
+                var newNode = new HuffmanTreeInternalNode<TSymbol>(a, b);
+
+                pq.Push(newNode, newNode.Frequency);
+            }
+
+            return pq.Pop();
+        }
     }
 
     public class HuffmanTreeInternalNode<TSymbol> : HuffmanTree<TSymbol>
