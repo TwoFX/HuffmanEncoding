@@ -48,7 +48,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BinaryHeap.cs" />
+    <Compile Include="Classes\HuffmanTree.cs" />
     <Compile Include="Classes\PriorityQueue.cs" />
+    <Compile Include="Tests\HuffmanTreeTest.cs" />
     <Compile Include="Tests\PriorityQueueTest.cs" />
     <Compile Include="Tests\BinaryHeapTest.cs" />
     <Compile Include="Other\ExtensionMethods.cs" />
