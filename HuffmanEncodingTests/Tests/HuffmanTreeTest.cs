@@ -89,6 +89,13 @@ namespace HuffmanEncoding
             HuffmanTree<char> a = HuffmanTree<char>.Create("this is an example of a huffman tree");
             Assert.AreEqual(36, a.Frequency);
         }
+
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void HuffmanTreeCreateEmptyEnum()
+        {
+            HuffmanTree<char> a = HuffmanTree<char>.Create(Enumerable.Empty<char>());
+        }
     
     }
 }

@@ -18,6 +18,9 @@ namespace HuffmanEncoding
             if (source == null)
                 throw new ArgumentNullException("source");
 
+            if (!source.Any())
+                throw new InvalidOperationException("Source sequence has no elements.");
+
             IEqualityComparer<TSymbol> comp = comparer ?? EqualityComparer<TSymbol>.Default;
 
             Dictionary<TSymbol, int> freq = new Dictionary<TSymbol, int>(comp);
