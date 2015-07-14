@@ -13,6 +13,8 @@ namespace HuffmanEncoding
             get;
         }
 
+        public abstract EncodingTree<TSymbol> ToEncodingTree();
+
         public static HuffmanTree<TSymbol> Create(IEnumerable<TSymbol> source, IEqualityComparer<TSymbol> comparer = null)
         {
             if (source == null)
@@ -59,6 +61,11 @@ namespace HuffmanEncoding
             get { return left.Frequency + right.Frequency; }
         }
 
+        public override EncodingTree<TSymbol> ToEncodingTree()
+        {
+            return new EncodingTreeNode<TSymbol>(left.ToEncodingTree(), right.ToEncodingTree());
+        }
+
         public HuffmanTreeInternalNode(HuffmanTree<TSymbol> left, HuffmanTree<TSymbol> right)
         {
             if (left == null)
@@ -85,6 +92,11 @@ namespace HuffmanEncoding
         public TSymbol Symbol
         {
             get { return symbol; }
+        }
+
+        public override EncodingTree<TSymbol> ToEncodingTree()
+        {
+            return new EncodingTreeLeaf<TSymbol>(symbol);
         }
 
         public HuffmanTreeLeaf(TSymbol symbol, int frequency)

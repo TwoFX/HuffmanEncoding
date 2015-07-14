@@ -97,5 +97,14 @@ namespace HuffmanEncoding
             HuffmanTree<char> a = HuffmanTree<char>.Create(Enumerable.Empty<char>());
         }
     
+        [Test]
+        public void HuffmanTreeToEncodingTree()
+        {
+            HuffmanTree<char> a = new HuffmanTreeInternalNode<char>(new HuffmanTreeLeaf<char>('a', 1111111), new HuffmanTreeLeaf<char>('b', 1));
+
+            EncodingTree<char> b = a.ToEncodingTree();
+            Assert.AreEqual('a', b.Resolve(new[] { false }));
+            Assert.AreEqual('b', b.Resolve(new[] { true }));
+        }
     }
 }
